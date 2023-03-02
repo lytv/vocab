@@ -53,7 +53,9 @@ const setProperty = (property: string, type: string) => {
     case 'status':
       return {
         status: {
-          name: property,
+          status: {
+            name: property,
+          },
         },
       };
     case 'title':
@@ -117,7 +119,7 @@ export const convertTextToNotionBody = (completion: CompletionResponse['completi
       synonym: setProperty(synonym, 'rich_text'),
       meaning: setProperty(meaning, 'rich_text'),
       tone: setProperty('default', 'select'),
-      status: setProperty('New', 'select'),
+      status: setProperty('New', 'status'),
       word: setProperty(word, 'title'),
     },
   };
